@@ -5,7 +5,9 @@ set(GGML_SOURCES_BITNET ggml-bitnet-lut.cpp)
 # Add sparse-ternary-fma adapter if enabled
 if (BITNET_USE_STFMA)
     list(APPEND GGML_HEADERS_BITNET ../include/ggml-bitnet-stfma.h)
+    list(APPEND GGML_HEADERS_BITNET ../include/ggml-bitnet-stfma-cache.h)
     list(APPEND GGML_SOURCES_BITNET ggml-bitnet-stfma.cpp)
+    list(APPEND GGML_SOURCES_BITNET ggml-bitnet-stfma-cache.c)
 endif()
 
 include_directories(3rdparty/llama.cpp/ggml/include)
